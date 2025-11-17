@@ -1,27 +1,18 @@
-import {Router} from 'express'
+import {Router} from 'express';
+
+import { actualizarUsuario, eliminarUsuario, insertarUsuario, obtenerUsuarios, verUsuario } from '../controlers/users.controlers.js';
 
 const router = Router();
 
-router.get('/users', (req, res)=>{
-    res.send("obteniendo usuarios")
-})
-
-router.get('/users/:id', (req, res)=>{
-    const { id } = req.params
-    res.send("obteniendo usuarios" + id)
-})
-
-router.post('/users', (req, res)=>{
-    res.send("Creando usuarios")
-})
-
-router.delete('/users/:id', (req, res)=>{
-    res.send("Eliminando usuarios")
-})
-
-router.put('/users/:id', (req, res)=>{
-    const { id } = req.params
-    res.send("obteniendo usuarios")
-})
+//todos los usuarios
+router.get('/users',obtenerUsuarios )
+//usuarios por ID
+router.get('/users/:id',verUsuario)
+//Crear usuarios
+router.post('/users', insertarUsuario)
+//Eliminar usuarios
+router.delete('/users/:id', eliminarUsuario);
+//actualizar usuarios
+router.put('/users/:id',actualizarUsuario);
 
 export default router;
