@@ -1,11 +1,12 @@
 import pg from 'pg'
+import { DB_USER, DB_HOST, DB_PASSWORD, DB_DATABASE, DB_PORT } from './config.js'
 
 export const pool = new pg.Pool({
-    user:"postgres",
-    host: "192.168.1.61",
-    password: "L0l4@2gU4p1g1O7#nA",
-    database: "apirest",
-    port:"5433"
+    user: DB_USER,
+    host: DB_HOST,
+    password: DB_PASSWORD,
+    database: DB_DATABASE,
+    port: DB_PORT
 
 })
 

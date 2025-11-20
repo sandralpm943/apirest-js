@@ -1,6 +1,11 @@
 import {Router} from 'express';
 
-import { actualizarUsuario, eliminarUsuario, insertarUsuario, obtenerUsuarios, verUsuario } from '../controlers/users.controlers.js';
+import { 
+    actualizarUsuario,
+    eliminarUsuario,
+    insertarUsuario,
+    obtenerUsuarios,
+    verUsuario } from '../controlers/users.controlers.js';
 
 const router = Router();
 
